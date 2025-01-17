@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
     <link
       rel="icon"
       type="image/png"
@@ -15,21 +14,24 @@
   </head>
   <body>
     <main>
-      <form action="#" method="POST" id="contact-form">
+      <form id="contact-form">
         <h1>Contact Us</h1>
         <div class="form-group form-name">
-          <div class="first-mame">
+          <div class="first-name">
             <label for="first-name">First Name *</label>
             <input type="text" id="first-name" name="first-name" required />
+            <span class="error-message" id="first-name-error">This field is required</span>
           </div>
-          <div class="last-mame">
+          <div class="last-name">
             <label for="last-name">Last Name *</label>
             <input type="text" id="last-name" name="last-name" required />
+            <span class="error-message" id="last-name-error">This field is required</span>
           </div>
         </div>
         <div class="form-group">
           <label for="email">Email Address *</label>
           <input type="email" id="email" name="email" required />
+          <span class="error-message" id="email-error">Please enter a valid email</span>
         </div>
         <div class="form-group">
           <label class="form-query">Query Type *</label>
@@ -54,27 +56,38 @@
               <label for="support-request">Support Request</label>
             </div>
           </div>
+          <span class="error-message" id="query-type-error">Please select a query type</span>
         </div>
         <div class="form-group">
           <label for="message">Message *</label>
           <textarea id="message" name="message" required></textarea>
+          <span class="error-message" id="message-error">This field is required</span>
         </div>
         <div class="form-group">
           <label for="consent">
             <input type="checkbox" id="consent" name="consent" required />
             I consent to being contacted by the team *
           </label>
+          <span class="error-message" id="consent-error">To submit this form, please consent to being contacted</span>
         </div>
-        <button type="submit">Submit</button>
+        <button id="submit-form" type="submit">Submit</button>
       </form>
+      <div class="success-message" role="status" aria-live="assertive" aria-atomic="true">
+        <div class="success-header">
+          <img src="assets/images/icon-success-check.svg" alt="Success check">
+          <h2>Message Sent!</h2>
+        </div>
+        <p>Thanks for completing the form. We'll be in touch soon!</p>
+      </div>
     </main>
 
     <footer>
       <div class="attribution">
         Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a
-        >. Coded by <a href="#">Marta Domańska</a>.
+        <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+        Coded by <a href="#">Marta Domańska</a>.
       </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
